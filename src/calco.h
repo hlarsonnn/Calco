@@ -1,9 +1,9 @@
-#ifndef CALCULATOR_H
-#define CALCULATOR_H
+#ifndef CALCO_H
+#define CALCO_H
 
 #include <string>
 
-class Calculator {
+class Calco {
 public:
     // Basic arithmetic operations with error handling
     static std::string add(double a, double b);
@@ -32,4 +32,4 @@ private:
     static constexpr const char* ERROR = "ERR";
 };
 
-#endif // CALCULATOR_H
+#endif // CALCO_H
