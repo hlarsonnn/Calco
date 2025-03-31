@@ -6,7 +6,7 @@
 using namespace std;
 
 // Basic arithmetic operations with string returns
-string Calculator::add(double a, double b) {
+string Calco::add(double a, double b) {
     double result = a + b;
     ostringstream oss;
     oss << fixed << setprecision(6);
@@ -20,7 +20,7 @@ string Calculator::add(double a, double b) {
     return str.empty() ? "0" : str;
 }
 
-string Calculator::subtract(double a, double b) {
+string Calco::subtract(double a, double b) {
     double result = a - b;
     ostringstream oss;
     oss << fixed << setprecision(6);
@@ -33,7 +33,7 @@ string Calculator::subtract(double a, double b) {
     return str.empty() ? "0" : str;
 }
 
-string Calculator::multiply(double a, double b) {
+string Calco::multiply(double a, double b) {
     double result = a * b;
     ostringstream oss;
     oss << fixed << setprecision(6);
@@ -46,7 +46,7 @@ string Calculator::multiply(double a, double b) {
     return str.empty() ? "0" : str;
 }
 
-string Calculator::divide(double a, double b) {
+string Calco::divide(double a, double b) {
     if (b == 0) {
         return INF;
     }
@@ -63,7 +63,7 @@ string Calculator::divide(double a, double b) {
 }
 
 // Advanced operations
-string Calculator::power(double base, double exponent) {
+string Calco::power(double base, double exponent) {
     double result = pow(base, exponent);
     if (isnan(result) || isinf(result)) {
         return ERROR;
@@ -79,7 +79,7 @@ string Calculator::power(double base, double exponent) {
     return str.empty() ? "0" : str;
 }
 
-string Calculator::squareRoot(double value) {
+string Calco::squareRoot(double value) {
     if (value < 0) {
         return ERROR;
     }
@@ -95,7 +95,7 @@ string Calculator::squareRoot(double value) {
     return str.empty() ? "0" : str;
 }
 
-string Calculator::modulus(double a, double b) {
+string Calco::modulus(double a, double b) {
     if (b == 0) {
         return ERROR;
     }
@@ -112,11 +112,11 @@ string Calculator::modulus(double a, double b) {
 }
 
 // Memory functions
-void Calculator::memoryStore(double value) {
+void Calco::memoryStore(double value) {
     memory = value;
 }
 
-string Calculator::memoryRecall() const {
+string Calco::memoryRecall() const {
     ostringstream oss;
     oss << fixed << setprecision(6);
     oss << memory;
@@ -128,19 +128,19 @@ string Calculator::memoryRecall() const {
     return str.empty() ? "0" : str;
 }
 
-void Calculator::memoryClear() {
+void Calco::memoryClear() {
     memory = 0.0;
 }
 
-void Calculator::memoryAdd(double value) {
+void Calco::memoryAdd(double value) {
     memory += value;
 }
 
-void Calculator::memorySubtract(double value) {
+void Calco::memorySubtract(double value) {
     memory -= value;
 }
 
 // Utility function
-bool Calculator::isError(const string& result) {
+bool Calco::isError(const string& result) {
     return result == INF || result == ERROR;
 }
